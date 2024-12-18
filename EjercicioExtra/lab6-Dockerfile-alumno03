@@ -1,0 +1,14 @@
+#Imagen
+FROM python:3.11
+
+#Directorio de trabajo
+WORKDIR /app
+
+#Copiando el archivo reduc-operation-alumno03
+COPY reduc-operation-alumno03.ipynb .
+
+#Instalar dependencias necesarias
+RUN pip install ipython Numba Numpy nbformat
+
+#Comando para ejecutar el programa
+CMD ["ipython", "/app/reduc-operation-alumno03.ipynb", "100000"]
